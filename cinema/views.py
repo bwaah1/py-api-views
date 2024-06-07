@@ -84,6 +84,9 @@ class ActorDetail(
     def put(self, request, *args, **kwargs) -> Response:
         return self.update(request, *args, **kwargs)
 
+    def patch(self, request, *args, **kwargs) -> Response:
+        return self.partial_update(request, *args, **kwargs)
+
     def delete(self, request, *args, **kwargs) -> Response:
         return self.destroy(request, *args, **kwargs)
 
