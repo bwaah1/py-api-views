@@ -19,8 +19,8 @@ class CinemaHall(models.Model):
 class Movie(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
-    actors = models.ManyToManyField(Actor, related_name="actors")
-    genres = models.ManyToManyField(Genre, related_name="genres")
+    actor = models.ForeignKey(Actor, on_delete=models.CASCADE, related_name="movies")
+    genre = models.ForeignKey(Genre, on_delete=models.CASCADE, related_name="movies")
     duration = models.IntegerField()
 
     def __str__(self) -> str:
